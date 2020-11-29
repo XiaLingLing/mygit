@@ -1,0 +1,50 @@
+https://blog.csdn.net/loongkingwhat/article/details/84378386
+https://blog.csdn.net/qq_19004627/article/details/103417757
+当前目录下面有.git文件夹------默认是隐藏的，直接将.git文件夹掉，再重新git add .
+【git】warning: adding embedded git repository
+本地新建一个与远程分支同名的分支dev-now 
+git push时。提示操作下面语句
+ git push --set-upstream origin dev-now
+
+https://www.cnblogs.com/dingxu/p/9032014.html
+解决方案：
+git remote add origin git@github.com:XiaLingLing/mygit.git			--这一句很重要，origin和你克隆的那个地址建立远程联系
+将关联远程仓库为origin
+git push --set-upstream origin master	-创建上传的流
+
+https://blog.csdn.net/qldxsun/article/details/80398318
+git everything up-to-date解决方法
+方法特别简单，实际就是在push之前必须要写commit
+
+设置当前dev-now分支与远程的哪个分支建立联系 
+ git branch --set-upstream-to=origin/<branch> dev-now
+
+提交向远程的哪个分支（即HEAD后面的参数）
+git push origin HEAD:master
+
+
+
+git实操
+git push <远程主机名> <本地分支名>:<远程分支名>
+
+https://blog.csdn.net/u012145252/article/details/80628451
+fatal: refusing to merge unrelated histories
+出现这个问题的最主要原因还是在于本地仓库和远程仓库实际上是独立的两个仓库。假如我之前是直接clone的方式在本地建立起远程github仓库的克隆本地仓库就不会有这问题了。
+查阅了一下资料，发现可以在pull命令后紧接着使用--allow-unrelated-history选项来解决问题（该选项可以合并两个独立启动仓库的历史）
+git pull origin master --allow-unrelated-histories
+
+
+Git提交时出现Merge branch 'master' of ...之解决方法
+https://blog.csdn.net/weixin_44202659/article/details/103841807
+git pull --rebase
+使用git pull --rebase命令，如果没有冲突,则会直接合并，如果存在冲突，手动解决冲突即可，不会再产生那条多余的信息。如果你不想每次都rebase，可以在git bash里执行
+git config --global pull.rebase true
+
+在git bush中如何退出vim编辑器
+https://blog.csdn.net/qq_35623773/article/details/89386927
+按下字母键 c（此时进入编辑状态），可以开始修改注释信息了
+修改好后，你会发现怎么都退出不了，然后如下操作：
+按下Esc (退出编辑状态)； 接着连按两次大写字母Z，你会惊喜的发现，终于保存好退出来了！
+
+
+
